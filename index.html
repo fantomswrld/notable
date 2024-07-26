@@ -8,74 +8,85 @@
 </head>
 <body>
     <div class="container">
-        <aside class="sidebar">
+        <div class="sidebar">
             <div class="top-section">
-                <button class="active-note">
-                    <div class="note-options">
-                        <button class="options-button">
-                            <img class="options" src="images/more.png" height="20px" width="20px" alt="Note Options Button">
+                <div class="active-note">
+                    <div class="left">
+                        <button id="not-options">
+                            <img src="images/more.png" alt="Note Options Button" height="30px" width="30px">
                         </button>
                     </div>
-    
-                    <h3 class="note-title">Note Title</h3>
-                </button>
-    
-                <button class="inactive-note">
-                    <div class="note-options">
-                        <button class="options-button">
-                            <img class="options" src="images/more.png" height="20px" width="20px" alt="Note Options Button">
+
+                    <div class="right">
+                        <h3 id="note-title">Note</h3>
+                    </div>
+                </div>
+
+                <div class="inactive-note">
+                    <div class="left">
+                        <button id="not-options">
+                            <img src="images/more.png" alt="Note Options Button" height="30px" width="30px">
                         </button>
                     </div>
-    
-                    <h3 class="note-title">Note Title</h3>
-                </button>
-    
-                <button class="inactive-note">
-                    <div class="note-options">
-                        <button class="options-button">
-                            <img class="options" src="images/more.png" height="20px" width="20px" alt="Note Options Button">
+
+                    <div class="right">
+                        <h3 id="note-title">Note #1</h3>
+                    </div>
+                </div>
+
+                <div class="inactive-note">
+                    <div class="left">
+                        <button id="not-options">
+                            <img src="images/more.png" alt="Note Options Button" height="30px" width="30px">
                         </button>
                     </div>
-    
-                    <h3 class="note-title">Note Title</h3>
-                </button>
-    
-                <button class="inactive-note">
-                    <div class="note-options">
-                        <button class="options-button">
-                            <img class="options" src="images/more.png" height="20px" width="20px" alt="Note Options Button">
+
+                    <div class="right">
+                        <h3 id="note-title">Note #2</h3>
+                    </div>
+                </div>
+
+                <div class="inactive-note">
+                    <div class="left">
+                        <button id="not-options">
+                            <img src="images/more.png" alt="Note Options Button" height="30px" width="30px">
                         </button>
                     </div>
-    
-                    <h3 class="note-title">Note Title</h3>
-                </button>
+
+                    <div class="right">
+                        <h3 id="note-title">Note #3</h3>
+                    </div>
+                </div>
             </div>
 
             <div class="bottom-section">
-                <button class="new-note">+</button>
-                <button class="settings">
-                    <img class="options" src="images/setting.png" alt="Settings Button" height="20px" width="20px">
+                <button id="new-note">+</button>
 
-                    <h2 class="settings-text">Settings</h2>
-                </button>
+                <div class="settings">
+                    <div class="left">
+                        <img src="images/setting.png" alt="Settings Button" height="30px" width="30px">
+                    </div>
+
+                    <div class="right">
+                        <h2 class="settings-text">Settings</h2>
+                    </div>
+                </div>
             </div>
-        </aside>
+        </div>
 
-        <main class="current-note">
-            <div class="title-section">
-                <h3 class="note-name"></h3>
+        <div class="main-content">
+            <div class="note-title-section">
+                <h3 class="note-title">Note</h3>
             </div>
 
             <br>
 
-            <div class="content-space">
-                <input type="text" id="content">
-            </div>
+            <input type="text" class="content-area">
 
-            <div class="logo">
-                <img class="logo" src="images/Notable Logo.png" alt="Logo" height="50px" width: 50px>
+            <div class="logo-container">
+                <img src="images/Notable Logo.png" alt="Notable Logo" height="50px" width="50px">
             </div>
-        </main>
+        </div>
     </div>
 </body>
 </html>
