@@ -31,6 +31,44 @@ body {
     background-color: #2D2D2D;
 }
 
+.sidebar .heading {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    gap: 1rem;
+}
+
+.sidebar .minimize {
+    background-color: #363636;
+    border-radius: 10px;
+    padding: 5px;
+
+    transition: background-color 150ms ease-in-out;
+}
+
+.sidebar .minimize:hover {
+    background-color: #6d6d6d;
+}
+
+.sidebar .minimize img {
+    height: 30px;
+    width: 30px;
+}
+
+.sidebar .minimize button {
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+}
+
+.heading {
+    text-align: center;
+    padding: 7.5px;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 0.5rem;
+}
+
 .note {
     display: flex;
     align-items: center;
@@ -42,13 +80,22 @@ body {
     border-radius: 10px;
 }
 
+.note.active:hover, .note.inactive:hover {
+    background-color: #6d6d6d;
+}
+
 .note.active {
     background-color: #262626;
-    width: 110%;
+    width: 100%;
+    margin-left: 10px;
+
+    transition: background-color 150ms ease-in-out;
 }
 
 .note.inactive {
     background-color: #363636;
+
+    transition: background-color 150ms ease-in-out;
 }
 
 .note button {
@@ -57,6 +104,8 @@ body {
     border: none;
     border-radius: 100%;
     padding: 10px;
+
+    transition: background-color 150ms ease-in-out;
 }
 
 .note button:hover {
@@ -83,6 +132,8 @@ body {
     color: #fff;
     font-weight: bolder;
     cursor: pointer;
+
+    transition: background-color 150ms ease-in-out;
 }
 
 .sidebar .bottom-section #new-note:hover {
@@ -98,6 +149,12 @@ body {
     padding: 10px;
     border: none;
     border-radius: 10px;
+
+    transition: background-color 150ms ease-in-out;
+}
+
+.sidebar .bottom-section .settings:hover {
+    background-color: #6d6d6d;
 }
 
 .sidebar .bottom-section .settings img {
@@ -172,4 +229,10 @@ body {
     width: 70px;
     border: none;
     border-radius: 10px;
+
+    transition: background-color 150ms ease-in-out;
+}
+
+.main-content .logo-container:hover {
+    background-color: #363636;
 }
