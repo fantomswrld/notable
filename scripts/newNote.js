@@ -1,4 +1,5 @@
-import { setActive } from "./setActiveNote.js"
+import { arrOfNoteObjects } from "./arrayOfNotes.js"
+import { Note } from "./arrayOfNotes.js"
 import { setInactive } from "./setActiveNote.js"
 import { setNoteStatus } from "./setActiveNote.js"
 
@@ -8,11 +9,25 @@ const container = document.querySelector('.top-section')
 let noteTitle = ''
 
 newNoteButton.addEventListener('click', () => {
-    noteTitle = prompt('Title:')
-    createNewNote()
+    const continueToNoteCreation = confirm('Make sure current note is saved. Confirm?')
+    
+    if(continueToNoteCreation === true) {
+        noteTitle = prompt('Title:')
+
+        while(noteTitle.length === 0) {
+            noteTitle = prompt('*Note cannot be empty\n\nTitle:')
+        }
+        createNewNote()
+    } else {
+        return
+    }
 })
 
 function createNewNote() {
+    const newNote = new Note(noteTitle, '', 'inactive')
+    arrOfNoteObjects.push(newNote)
+    console.log(arrOfNoteObjects)
+
     const noteContainer = document.createElement('div')
     noteContainer.classList.add('note')
     setInactive(noteContainer)
