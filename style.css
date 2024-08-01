@@ -220,7 +220,7 @@ body {
     opacity: 50%;
 }
 
-.main-content .logo-container {
+.main-content .save-container {
     cursor: pointer;
     background-color: #474747;
     position: absolute;
@@ -229,15 +229,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5px;
+    padding: 10px;
     height: 70px;
-    width: 70px;
     border: none;
     border-radius: 10px;
 
     transition: background-color 150ms ease-in-out;
 }
 
-.main-content .logo-container:hover {
+.main-content .save-container:hover {
     background-color: #363636;
 }
