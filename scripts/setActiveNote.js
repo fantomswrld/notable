@@ -12,10 +12,10 @@ export function setNoteStatus(arrOfNoteElements, length) {
             const confirmNoteChange = confirm('Make sure current note is saved. Confirm?')
 
             if(confirmNoteChange === true) {
-                document.querySelector('textarea').value = ''
+                document.querySelector('textarea').value = arrOfNoteObjects[i].content
                 currentObjectIndex = i
                 currentNote = arrOfNoteObjects[i]
-                arrOfNoteObjects[i].activeState = 'true'
+                arrOfNoteObjects[i].activeState = 'active'
                 
                 console.log(`the current note is ${currentNote["title"]} at index ${currentObjectIndex} with the text content of ${currentNote["content"]}`)
                 setActive(arrOfNoteElements[i])
@@ -23,7 +23,7 @@ export function setNoteStatus(arrOfNoteElements, length) {
                 // setting all other notes inactive
                 for(let j = 0; j < length; j++) {
                     if(arrOfNoteElements[j] != arrOfNoteElements[i]) {
-                        arrOfNoteObjects[j].activeState = 'false'
+                        arrOfNoteObjects[j].activeState = 'inactive'
                         setInactive(arrOfNoteElements[j])
                     }
                 }

@@ -1,6 +1,3 @@
-const defaultNoteName = document.querySelector('.default #note-title').textContent
-console.log(defaultNoteName)
-
 export class Note {
     constructor(title, content, activeState) {
         this.title = title
@@ -9,6 +6,6 @@ export class Note {
     }
 }
 
-const defaultNoteObject = new Note(defaultNoteName, '', 'inactive');
+const defaultNoteObject = new Note('Note #1', '', 'active');
 
 export let arrOfNoteObjects = [defaultNoteObject]
