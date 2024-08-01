@@ -1,22 +1,27 @@
-const notes = document.querySelectorAll('.note');
-const notesLength = notes.length
+export const notes = document.querySelectorAll('.note')
+export const notesLength = notes.length
 
-for(let i = 0; i < notesLength; i++) {
-    notes[i].addEventListener('click', () => {
-        setActive(notes[i])
-
-        for(let j = 0; j < notesLength; j++) {
-            if(notes[j] != notes[i]) {
-                setInactive(notes[j])
+export function setNoteStatus(arrNotes, length) {
+    for(let i = 0; i < length; i++) {
+        arrNotes[i].addEventListener('click', () => {
+            setActive(arrNotes[i])
+    
+            // setting all other notes inactive
+            for(let j = 0; j < length; j++) {
+                if(arrNotes[j] != arrNotes[i]) {
+                    setInactive(arrNotes[j])
+                }
             }
-        }
-    })
+        })
+    }
 }
 
-function setActive(note) {
+setNoteStatus(notes, notesLength)
+
+export function setActive(note) {
     note.className = 'note active'
 }
 
-function setInactive(note) {
+export function setInactive(note) {
     note.className = 'note inactive'
 }
