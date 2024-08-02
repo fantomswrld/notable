@@ -20,15 +20,17 @@
                     </div>
                 </div>
 
-                <div class="note active default">
-                    <div class="left">
-                        <button id="note-options">
-                            <img src="images/more.png" alt="Note Options Button" height="30px" width="30px">
-                        </button>
-                    </div>
-
-                    <div class="right">
-                        <h3 id="note-title">Note #1</h3>
+                <div class="note-container">
+                    <div class="note active default" id="12345678">
+                        <div class="left">
+                            <button id="note-options">
+                                <img src="images/more.png" alt="Note Options Button" height="30px" width="30px">
+                            </button>
+                        </div>
+    
+                        <div class="right">
+                            <h3 id="note-title">Note #1</h3>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -67,6 +69,7 @@
         </div>
     </div>
 
+    <script src="scripts/loadNotes.js" type="module"></script>
     <script src="scripts/newNote.js" type="module"></script>
     <script src="scripts/setActiveNote.js" type="module"></script>
     <script src="scripts/saveNote.js" type="module"></script>

@@ -4,7 +4,7 @@ import { setInactive } from "./setActiveNote.js"
 import { setNoteStatus } from "./setActiveNote.js"
 
 const newNoteButton = document.getElementById('new-note')
-const container = document.querySelector('.top-section')
+const container = document.querySelector('.note-container')
 
 let noteTitle = ''
 
@@ -24,12 +24,13 @@ newNoteButton.addEventListener('click', () => {
 })
 
 function createNewNote() {
-    const newNote = new Note(noteTitle, '', 'inactive')
+    const newNote = new Note(generateId(), noteTitle, '', 'inactive')
+    console.log(newNote)
     arrOfNoteObjects.push(newNote)
-    console.log(arrOfNoteObjects)
 
     const noteContainer = document.createElement('div')
     noteContainer.classList.add('note')
+    noteContainer.id = newNote.id
     setInactive(noteContainer)
 
     const leftSide = document.createElement('div')
@@ -61,4 +62,41 @@ function createNewNote() {
     const notes = document.querySelectorAll('.note')
     const notesLength = notes.length
     setNoteStatus(notes, notesLength)
+}
+
+function generateId() {
+    const length = 8
+    const numbers = '1234567890'
+
+    let newId = ''
+
+    for(let i = 0; i < length; i++) {
+        newId += numbers.charAt(Math.floor(Math.random() * numbers.length))
+        
+        const idExists = checkIfIdExists(newId, arrOfNoteObjects)
+
+        while(idExists) {
+            newId += numbers.charAt(Math.floor(Math.random() * numbers.length))
+
+            if(idExists === false) {
+                break
+            }
+        }
+    }
+
+    return newId
+}
+
+function checkIfIdExists(idToCheck, array) {
+    let result = ''
+
+    array.forEach(arrayItem => {
+        if(idToCheck == arrayItem.id) {
+            result = true
+        } else {
+            result = false
+        }
+    })
+
+    return result
 }
