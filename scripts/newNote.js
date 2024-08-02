@@ -25,7 +25,6 @@ newNoteButton.addEventListener('click', () => {
 
 function createNewNote() {
     const newNote = new Note(generateId(), noteTitle, '', 'inactive')
-    console.log(newNote)
     arrOfNoteObjects.push(newNote)
 
     const noteContainer = document.createElement('div')
@@ -72,15 +71,16 @@ function generateId() {
 
     for(let i = 0; i < length; i++) {
         newId += numbers.charAt(Math.floor(Math.random() * numbers.length))
-        
-        const idExists = checkIfIdExists(newId, arrOfNoteObjects)
+    }
 
-        while(idExists) {
-            newId += numbers.charAt(Math.floor(Math.random() * numbers.length))
+    // validate that id generated does not exist
+    const idExists = checkIfIdExists(newId, arrOfNoteObjects)
 
-            if(idExists === false) {
-                break
-            }
+    while(idExists) {
+        newId += numbers.charAt(Math.floor(Math.random() * numbers.length))
+
+        if(idExists === false) {
+            break
         }
     }
 

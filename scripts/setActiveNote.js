@@ -17,7 +17,6 @@ export function setNoteStatus(arrOfNoteElements, length) {
                 currentNote = arrOfNoteObjects[i]
                 arrOfNoteObjects[i].activeState = 'active'
                 
-                console.log(`the current note is ${currentNote["title"]} at index ${currentObjectIndex} with the text content of ${currentNote["content"]}`)
                 setActive(arrOfNoteElements[i])
         
                 // setting all other notes inactive

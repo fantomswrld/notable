@@ -10,14 +10,13 @@ saveNoteButton.addEventListener('click', () => {
     arrOfNoteObjects[currentObjectIndex] = currentNote
 
     const notesNodeList = document.querySelectorAll('.note')
-    console.log(notesNodeList)
     const notesNodeListAsArray = Array.from(notesNodeList)
-    console.log(notesNodeListAsArray)
 
     const notes = {
         content: notesNodeListAsArray
     }
 
+    // converting to string to be readable by localStorage
     const notesSerialized = JSON.stringify(notes)
     localStorage.setItem("Notes", notesSerialized)
 })
